@@ -76,30 +76,78 @@ void setup() {
 void interpretRemoteCode(int code) {
   int randomColor[3] = {random(256), random(256), random(256)};
   switch (code) {
-    case ON_CODE: setColor(randomColor); break;
-    case OFF_CODE: setColor(BLACK_COLOR); break;
-    case INTENSITY_UP_CODE: raiseIntensity(); break;
-    case INTENSITY_DN_CODE: lowerIntensity(); break;
-    case RED_CODE: setColor(RED_COLOR); break;
-    case GREEN_CODE: setColor(GREEN_COLOR); break;
-    case BLUE_CODE: setColor(BLUE_COLOR); break;
-    case WHITE_CODE: setColor(WHITE_COLOR); break;
-    case ORANGE_CODE: setColor(ORANGE_COLOR); break;
-    case TURQUOISE_CODE: setColor(TURQUOISE_COLOR); break;
-    case NAVY_CODE: setColor(NAVY_COLOR); break;
-    case BROWN_CODE: setColor(BROWN_COLOR); break;
-    case TEAL_CODE: setColor(TEAL_COLOR); break;
-    case PURPLE_DARK_CODE: setColor(PURPLE_DARK_COLOR); break;
-    case ORANGE_LIGHT_CODE: setColor(ORANGE_LIGHT_COLOR); break;
-    case BLUE_LIGHT_CODE: setColor(BLUE_LIGHT_COLOR); break;
-    case PINK_DARK_CODE: setColor(PINK_DARK_COLOR); break;
-    case YELLOW_CODE: setColor(YELLOW_COLOR); break;
-    case BLUE_BABY_CODE: setColor(BLUE_BABY_COLOR); break;
-    case PINK_CODE: setColor(PINK_COLOR); break;
-    case FLASH_CODE: flash(); break;
-    case STROBE_CODE: strobe(); break;
-    case FADE_CODE: fade(); break;
-    case SMOOTH_CODE: crossFade(); break;
+    case ON_CODE: 
+      setColor(randomColor); 
+      break;
+    case OFF_CODE: 
+      setColor(BLACK_COLOR); 
+      break;
+    case INTENSITY_UP_CODE: 
+      raiseIntensity(); 
+      break;
+    case INTENSITY_DN_CODE: 
+      lowerIntensity(); 
+      break;
+    case RED_CODE: 
+      setColor(RED_COLOR); 
+      break;
+    case GREEN_CODE: 
+      setColor(GREEN_COLOR); 
+      break;
+    case BLUE_CODE: 
+      setColor(BLUE_COLOR); 
+      break;
+    case WHITE_CODE: 
+      setColor(WHITE_COLOR); 
+      break;
+    case ORANGE_CODE: 
+      setColor(ORANGE_COLOR); 
+      break;
+    case TURQUOISE_CODE: 
+      setColor(TURQUOISE_COLOR); 
+      break;
+    case NAVY_CODE: 
+      setColor(NAVY_COLOR);
+      break;
+    case BROWN_CODE: 
+      setColor(BROWN_COLOR); 
+      break;
+    case TEAL_CODE: 
+      setColor(TEAL_COLOR); 
+      break;
+    case PURPLE_DARK_CODE: 
+      setColor(PURPLE_DARK_COLOR); 
+      break;
+    case ORANGE_LIGHT_CODE: 
+      setColor(ORANGE_LIGHT_COLOR); 
+      break;
+    case BLUE_LIGHT_CODE: 
+      setColor(BLUE_LIGHT_COLOR); 
+      break;
+    case PINK_DARK_CODE: 
+      setColor(PINK_DARK_COLOR); 
+      break;
+    case YELLOW_CODE: 
+      setColor(YELLOW_COLOR); 
+      break;
+    case BLUE_BABY_CODE: 
+      setColor(BLUE_BABY_COLOR); 
+      break;
+    case PINK_CODE: 
+      setColor(PINK_COLOR); 
+      break;
+    case FLASH_CODE: 
+      flash(); 
+      break;
+    case STROBE_CODE: 
+      strobe(); 
+      break;
+    case FADE_CODE: 
+      fade(); 
+      break;
+    case SMOOTH_CODE: 
+      crossFade(); 
+      break;
   }
 }
 
