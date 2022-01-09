@@ -240,6 +240,7 @@ void findCode() {
 // custom flashing function
 void flash() {
   customLoop = true; // set the variable so that the program knows we are in a custom animation loop
+  EEPROM.update(0, FLASH_CODE);
   unsigned long previousMillis = 0;
   while (customLoop) { // while we are still in the custom animation loop
     if (irrecv.decode(&results)) { // check for incomming ir code and if found exit the loop and interpret the code
@@ -279,6 +280,7 @@ void flash() {
 
 void strobe() {
   customLoop = true;
+  EEPROM.update(0, STROBE_CODE);
   unsigned long previousMillis = 0;
   int i = 1;
   while (customLoop) {
@@ -318,6 +320,7 @@ void strobe() {
 
 void fade() {
   customLoop = true;
+  EEPROM.update(0, FADE_CODE);
   unsigned long previousMillis = 0;
   int i = 1;
   int randomNumber = random(16);
@@ -433,6 +436,7 @@ int calculateVal(int step, int val, int i) {
 void crossFade() {
   int randomNumber = random(16);
   customLoop = true;
+  EEPROM.update(0, SMOOTH_CODE);
   unsigned long previousMillis = 0;
   // Convert to 0-255
   int R = AVAILABLE_COLORS[randomNumber][0];
