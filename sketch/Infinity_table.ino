@@ -1,4 +1,5 @@
 #include <IRremote.h>
+#include <EEPROM.h>
 int recvPin = 8; // IR Receiver - Arduino Pin Number 8
 int redPin = 10; // RED Output Pin
 int greenPin = 9; // GREEN Output Pin
@@ -70,14 +71,14 @@ void setup() {
   pinMode(redPin, OUTPUT);
   pinMode(greenPin, OUTPUT);
   pinMode(bluePin, OUTPUT);
+  checkLedState();
 }
 
 // function for interpreting the incoming code and eighter setting a fixed color or starting a custom loop function
 void interpretRemoteCode(int code) {
-  int randomColor[3] = {random(256), random(256), random(256)};
   switch (code) {
     case ON_CODE: 
-      setColor(randomColor); 
+      setColor(last_state); 
       break;
     case OFF_CODE: 
       setColor(BLACK_COLOR); 
@@ -188,6 +189,7 @@ void setColor(int colors[]) {
   currentColors[0] = colors[0];
   currentColors[1] = colors[1];
   currentColors[2] = colors[2];
+  EEPROM.update(0, colors[]);
 }
 
 // calculate the intensity and send the current color out via the output pins
@@ -474,4 +476,16 @@ void crossFade() {
       }
     }
   }
+}
+
+void checkLedState() {
+   Serial.println("Last State");
+   last_state = EEPROM.read(0);
+   if (existsInArray(last_state, AVAILABLE_CODES, 24)) {
+      Serial.println("Code Found");
+      last_state = last_state;
+   } 
+   else
+     last_state = BLACK_COLOR 
+   }
 }
